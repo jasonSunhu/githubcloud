@@ -22,7 +22,6 @@ public class BookControllerTest2 {
 
     @Autowired
     private MockMvc mvc;
-
     @Test
     public void bookHome() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/book/home")).andExpect(MockMvcResultMatchers.status().isOk());
