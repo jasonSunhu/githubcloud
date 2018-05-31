@@ -1,7 +1,6 @@
 package com.sunhu.web.controller;
 
-import com.sunhu.web.User;
-import com.sunhu.web.UserDAO;
+import com.sunhu.web.other.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

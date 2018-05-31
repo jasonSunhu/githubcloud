@@ -1,4 +1,4 @@
-package com.sunhu.web;
+package com.sunhu.web.other;
 
 /**
  * Created by Administrator on 2018/5/28.

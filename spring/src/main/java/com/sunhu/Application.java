@@ -1,6 +1,7 @@
 package com.sunhu;
 
 import com.sunhu.web.*;
+import com.sunhu.web.other.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
@@ -9,6 +10,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+/**
+ * @SpringBootApplication默认扫描当前包及其子包，可以通过(scanBasePackages = "")配置要扫描的包
+ */
 @SpringBootApplication
 @Import({Role.class, User.class})
 public class Application {

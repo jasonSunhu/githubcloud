@@ -1,5 +1,6 @@
 package com.sunhu.web;
 
+import com.sunhu.web.other.UserDAO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

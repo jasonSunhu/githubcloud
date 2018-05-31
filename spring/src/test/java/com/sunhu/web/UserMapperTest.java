@@ -1,5 +1,6 @@
 package com.sunhu.web;
 
+import com.sunhu.web.other.UserMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

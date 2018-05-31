@@ -1,22 +1,19 @@
-package com.sunhu.web;
+package com.sunhu.web.other;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 /**
  * Created by Administrator on 2018/5/24.
  */
 @Component
-@PropertySource("classpath:jdbc.properties")
-public class JdbcBean {
-    @Value("${driver}")
+public class MyBean {
+    @Value("${local.ip}")
     private String ip;
 
-    @Value("${usernamed}")
+    @Value("${this.name}")
     private String name;
+
 
     public void show(){
         System.out.println(ip);

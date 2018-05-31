@@ -1,4 +1,4 @@
-package com.sunhu.web;
+package com.sunhu.web.other;
 
 import org.springframework.stereotype.Repository;
 
