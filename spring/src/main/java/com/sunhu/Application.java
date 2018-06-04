@@ -1,9 +1,9 @@
 package com.sunhu;
 
-import com.sunhu.web.*;
 import com.sunhu.web.other.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration;
 import org.springframework.boot.env.EnvironmentPostProcessor;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 /**
  * @SpringBootApplication默认扫描当前包及其子包，可以通过(scanBasePackages = "")配置要扫描的包
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = ErrorMvcAutoConfiguration.class)
 @ServletComponentScan    //扫描servlet api注解的扫描
 @Import({Role.class, User.class})
 public class Application {
