@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by Administrator on 2018/6/4.
  */
-@Component
+//@Component
 public class CommonErrorPageRegistry implements ErrorPageRegistrar {
     @Override
     public void registerErrorPages(ErrorPageRegistry errorPageRegistry) {
