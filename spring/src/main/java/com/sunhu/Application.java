@@ -1,6 +1,7 @@
 package com.sunhu;
 
 import com.sunhu.dao.ProductDao;
+import com.sunhu.dao.UserDao;
 import com.sunhu.web.other.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -34,7 +35,8 @@ public class Application {
 		ConfigurableApplicationContext context =  application.run(args);
 		context.getBean(Runnable.class).run();
 		//异步
-		context.getBean(TestEnable.class).show();
+		//context.getBean(TestEnable.class).show();
+
 		System.out.println(context.getBean(MyBean.class));
 		context.getBean(MyBean.class).show();
 		System.out.println(context.getEnvironment().getProperty("local.ip"));
@@ -45,6 +47,9 @@ public class Application {
 
 		//context.getBean(ProductDao.class).update("棒棒");
 		//测试事务
-		context.getBean(ProductDao.class).updateProducts("棒棒","aa","");
+		//context.getBean(ProductDao.class).updateProducts("棒棒","aa","");
+
+		//aop
+		context.getBean(UserDao.class).add("sunhu","sunhu");
 	}
 }
