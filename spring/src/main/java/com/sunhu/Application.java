@@ -1,5 +1,6 @@
 package com.sunhu;
 
+import com.sunhu.dao.ProductDao;
 import com.sunhu.web.other.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,5 +38,7 @@ public class Application {
 		//import装配配bean
 		System.out.println(context.getBean(User.class));
 		System.out.println(context.getBean(Role.class));
+
+		context.getBean(ProductDao.class).update("棒棒");
 	}
 }
