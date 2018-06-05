@@ -11,6 +11,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import java.io.FileNotFoundException;
 
 /**
  * @SpringBootApplication默认扫描当前包及其子包，可以通过(scanBasePackages = "")配置要扫描的包
@@ -18,12 +21,13 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication(exclude = ErrorMvcAutoConfiguration.class)
 @ServletComponentScan    //扫描servlet api注解的扫描
 @Import({Role.class, User.class})
+@EnableTransactionManagement//启用事务
 public class Application {
 	@Bean
 	public Runnable createRunnable(){
 		return ()->{System.out.println("spring boot is running");};
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		SpringApplication application = new SpringApplication(Application.class);
 		application.setAdditionalProfiles("test");
 
@@ -39,6 +43,8 @@ public class Application {
 		System.out.println(context.getBean(User.class));
 		System.out.println(context.getBean(Role.class));
 
-		context.getBean(ProductDao.class).update("棒棒");
+		//context.getBean(ProductDao.class).update("棒棒");
+		//测试事务
+		context.getBean(ProductDao.class).updateProducts("棒棒","aa","");
 	}
 }
