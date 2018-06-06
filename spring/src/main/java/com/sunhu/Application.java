@@ -2,6 +2,7 @@ package com.sunhu;
 
 import com.sunhu.dao.ProductDao;
 import com.sunhu.dao.UserDao;
+import com.sunhu.web.log.Mylog;
 import com.sunhu.web.other.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -49,7 +50,10 @@ public class Application {
 		//测试事务
 		//context.getBean(ProductDao.class).updateProducts("棒棒","aa","");
 
-		//aop
-		context.getBean(UserDao.class).add("sunhu","sunhu");
+		//测试aop
+		//context.getBean(UserDao.class).add("sunhu","sunhu");
+
+		//日志
+		context.getBean(Mylog.class).log();
 	}
 }
