@@ -47,4 +47,24 @@ public class IntegerTest {
         Integer b = 128;
         System.out.print(a == b); //false
     }
+    @Test
+    public void test5(){
+        List<Object[]> list = new ArrayList<>(0);
+        List<Object[]> lis2 = new ArrayList<>();
+        Integer[] i2 = {1,2,3};
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        lis2.add(i2);
+        list.addAll(lis2);
+    }
 }
